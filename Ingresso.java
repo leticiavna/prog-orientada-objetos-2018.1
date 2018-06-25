@@ -11,9 +11,8 @@ public class Ingresso{
     }
 
     // GETS para retornar o valor dos atributos (obedecendo o encapsulamento)
-    public TipoIngresso
     public Local getLocalIngresso(){
-        return local;
+        return local.getLocal();
     }
 
     public Evento getNomeEventoNoBilhete() {
@@ -23,5 +22,12 @@ public class Ingresso{
     public Evento getTurneNoBilhete(){
         return evento.getTurne();
     }
+
+    public TipoIngresso getTipoIngressonoBilhete() {
+        return tipo.getTipoIngresso();   
+    }
     
+    public TipoIngresso getValorIngressoNoBilhete() {
+        return tipo.getValorIngresso();
+    }
 }
