@@ -24,9 +24,14 @@ public class Evento {
 	public void getLocais() {
 		int tamanhoLista = this.locais.size();
 		for(int i = 0; i < tamanhoLista; i++){
-			System.out.println("Local: " + this.locais.get(i).getNome() + " Data: " +
-				sthis.datas.get(i).getData());
+			System.out.println((i+1) + "º Local: " + this.locais.get(i).getNome() + " Data: " +
+				this.datas.get(i).getData());
 		}
+	}
+
+	public void getLocal(int i){
+		System.out.println("Selecionado: Local: " + this.locais.get(i).getNome() + " Data: " +  
+				this.datas.get(i).getData());
 	}
 
 	public String getTurne() {
