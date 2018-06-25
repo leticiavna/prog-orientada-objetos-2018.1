@@ -1,7 +1,15 @@
 public class Local{
-	private String[] nome;
+	private String nome;
+	//private String cidade;
 
-	public Local(String[] n){
-		this.nome = n;
+	public Local(String nome){
+		this.nome = nome;
+	//	this.nome = cidade;
 	} 
+
+	public String getNome(){
+		return this.nome;
+	}
+
+
 }
