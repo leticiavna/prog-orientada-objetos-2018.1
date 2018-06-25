@@ -6,11 +6,9 @@ public class Evento {
 	private List<String> datas;
 	private List<String> cidades;
 
-	public Evento(String nomeArtista, String turne, List<String> datas, List<String> cidades){
+	public Evento(String nomeArtista, String turne){
 		this.nomeArtista = nomeArtista;
 		this.turne = turne;
-		this.datas = datas;
-		this.cidades = cidades;
 	}
 	
 
@@ -18,16 +16,23 @@ public class Evento {
 		return nomeArtista;
 	}
 
-	public List<String> getCidades() {
-		return cidades;
-	}
-
-	public List<String> getDatas() {
-		return datas;
+	public void getCidadesLocal() {
+		int tamanhoLista = this.cidades.size();
+		for(int i = 0; i < tamanhoLista; i++){
+			System.out.print("Local: ");
+			System.out.print(this.cidades.get(i));
+			System.out.print(" Data: ");
+			System.out.print(this.cidades.get(i));
+		}
 	}
 
 	public String getTurne() {
 		return turne;
+	}
+
+	public void criaLocalData(String data, String local){
+		this.datas.add(data);
+		this.local.add(local);
 	}
 
 }
