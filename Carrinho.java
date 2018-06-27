@@ -12,18 +12,19 @@ public class Carrinho {
     // GETS para o carrinho, retorna quantidade total, quantidade de itens
         
 	public double getTotalIngressos() {
-		return totalIngressos;
+		return calculaValorTotalIngressos();
 	}
 
-    public void adicionaNoCarrinho(QtdCarrinho item){
-        itens.add(item);
+    public void adicionaNoCarrinho(QtdCarrinho Cart){
+        itensCarrinho.add(Cart);
     }
     
+    // Essa função pega todos os ingressos e seus valores (já com a quantidade multiplicada) e retorna o valor total.
     private double calculaValorTotalIngressos(){
-        double total = 0.0;
-        for(QtdCarrinho item: itens){
-            total += item.calculaSubtotal();
+        double totalIngressos = 0.0;
+        for(int i = 0; i < itensCarrinho.size(); i++){
+            totalIngressos += itensCarrinho.get(i).getValorDoTipo();
         }
-        return total;
+        return totalIngressos;
     }
 }

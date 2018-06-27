@@ -20,4 +20,9 @@ public class QtdCarrinho {
         return quantidade;
     }
 
+    // essa função retorna o valor total daquele tipo, multiplicado com a quantidade. 
+    public double getValorDoTipo(){
+        return this.getIngresso().getValorIngressoNoBilhete() * this.quantidade;
+    }
+
 }
