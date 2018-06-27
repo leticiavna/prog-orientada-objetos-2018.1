@@ -27,4 +27,13 @@ public class Carrinho {
         }
         return totalIngressos;
     }
+
+    public void mostraCarrinho(){
+        System.out.println("Produto(s)");
+        System.out.println("Valor Unitário");
+        System.out.println("Quantidade");
+        System.out.println("Valor\n");
+
+        //mostrar itens
+    }
 }

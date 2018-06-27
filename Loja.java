@@ -88,6 +88,7 @@ public class Loja{
                     System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
                     // alguem poe numeros nos tipos de ingressos please
                     eventos.get(numEvento).getIngressosAtuais();
+                    Cart.mostraCarrinho();
                     
                     // aqui ele tem show, local e data e escolhe tipo ingresso + quantidade
                     // ******************** 
@@ -95,8 +96,9 @@ public class Loja{
                     // **********************************
                     opcao = teclado.nextInt();
                     int numIngresso = opcao;
-                    String chosenIngresso = eventos.get(numEvento).getIngressoEscolhido();
-                    System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Com o ingresso: " + chosenIngresso + ". Escolha a quantidade:");
+                    // String chosenIngresso = eventos.get(numEvento).getIngressoEscolhido();
+                    //System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + 
+                    //". Com o ingresso: " + chosenIngresso + ". Escolha a quantidade:");
 
                 }
             }
