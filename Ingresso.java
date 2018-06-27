@@ -3,11 +3,13 @@ import java.util.List;
 public class Ingresso{
     private Local local;
     private Evento evento;
-    private TipoIngresso tipo;
+    private List<TipoIngresso> tipos;
 
     // construtor da classe Ingresso
-    public Ingresso(){
-    
+    public Ingresso(TipoIngresso tipo1, TipoIngresso tipo2, TipoIngresso tipo3){
+        this.tipos.add(tipo1);
+        this.tipos.add(tipo2);
+        this.tipos.add(tipo3);
     }
 
     // GETS para retornar o valor dos atributos (obedecendo o encapsulamento)
@@ -24,7 +26,7 @@ public class Ingresso{
     }
 
     public String getTipoIngressonoBilhete() {
-        return tipo.getTipoIngresso();   
+        return tipos.getTipoIngresso();   
     }
     
     public double getValorIngressoNoBilhete() {

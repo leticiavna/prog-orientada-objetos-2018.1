@@ -18,6 +18,17 @@ public class Loja{
         eventos.add(evento1);
         eventos.add(evento2);
 
+        // Aqui declaramos os tipos de ingresso
+        TipoIngresso tipo1 = new TipoIngresso("Pista", 100.00);
+        TipoIngresso tipo2 = new TipoIngresso("Cadeira Superior", 200.00);
+        TipoIngresso tipo3 = new TipoIngresso("Cadeira Inferior", 150.00);
+        TipoIngresso tipo4 = new TipoIngresso("Arquibancada", 120.00);
+        TipoIngresso tipo5 = new TipoIngresso("Pista Galáctica", 400.00);
+        
+        //Inicializa ingressos e seus tipos
+        Ingresso bilhete1 = new Ingresso(tipo1, tipo2, tipo3);
+        Ingresso bilhete2 = new Ingresso(tipo1, tipo4, tipo5);
+
         // Declaramos nossa variável scanner para receber dados de entrada do usuário
         Scanner teclado = new Scanner(System.in);
 
@@ -43,9 +54,21 @@ public class Loja{
                 else {
                     String chosenEvento = eventos.get(opcao-1).getInformacoes();
                     System.out.println("Você escolheu: " + chosenEvento + " Por favor escolha um local e uma data:\n");
+                    // alguém coloca aqui numeros nos locais plz
                     eventos.get(opcao - 1).getLocais();
+
                     opcao = teclado.nextInt();
-                    System.out.println("Você escolheu: " + chosenEvento + "em: " . ". Escolha seu tipo de ingresso:")
+                    String chosenLocal = opcao;
+                    System.out.println("Você escolheu: " + chosenEvento + "em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
+                    switch (opcao) {                        
+                        case 1:
+                            
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                    
                 }
             }
         } while (opcao != 0);
