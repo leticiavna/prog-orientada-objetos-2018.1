@@ -10,6 +10,4 @@ public class Local{
 	public String getNome(){
 		return this.nome;
 	}
-
-
 }

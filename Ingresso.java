@@ -11,23 +11,23 @@ public class Ingresso{
     }
 
     // GETS para retornar o valor dos atributos (obedecendo o encapsulamento)
-    public Local getLocalIngresso(){
-        return local.getLocal();
+    public String getLocalIngresso(){
+        return local.getNome();
     }
 
-    public Evento getNomeEventoNoBilhete() {
+    public String getNomeEventoNoBilhete() {
         return evento.getNomeArtista();
     }
 
-    public Evento getTurneNoBilhete(){
+    public String getTurneNoBilhete(){
         return evento.getTurne();
     }
 
-    public TipoIngresso getTipoIngressonoBilhete() {
+    public String getTipoIngressonoBilhete() {
         return tipo.getTipoIngresso();   
     }
     
-    public TipoIngresso getValorIngressoNoBilhete() {
+    public double getValorIngressoNoBilhete() {
         return tipo.getValorIngresso();
     }
 }
