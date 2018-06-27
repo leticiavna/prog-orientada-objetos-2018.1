@@ -34,8 +34,9 @@ public class Loja{
                 if ((opcao - 1) > eventos.size()){
                     System.out.println("Evento não existe");
                 } else {
-                    System.out.println("Você escolheu esse evento. Por favor escolha um local e uma data:");
                     eventos.get(opcao - 1).getLocais();
+                    System.out.println("Você escolheu esse evento. Por favor escolha um local e uma data:");
+                    
                 }
             }
         } while (opcao != 0);
