@@ -11,7 +11,6 @@ public class QtdCarrinho {
         this.quantidade = quantidade;
     }
 
-
     // GETS para retornar os valores da classe
     public Ingresso getIngresso(){
         return ingresso;
