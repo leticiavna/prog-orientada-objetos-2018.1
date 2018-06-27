@@ -10,6 +10,11 @@ public class Carrinho {
     }
 
     // GETS para o carrinho, retorna quantidade total, quantidade de itens
+    public void getItensCarrinho(){
+        for(QtdCarrinho item: itensCarrinho){
+            System.out.println(item);
+        }
+    }
 	public double getTotalIngressos() {
 		return calculaValorTotalIngressos();
 	}
@@ -29,11 +34,12 @@ public class Carrinho {
     }
 
     public void mostraCarrinho(){
-        System.out.println("Produto(s)");
-        System.out.println("Valor Unitário");
-        System.out.println("Quantidade");
-        System.out.println("Valor\n");
+        System.out.println("**** SEU CARRINHO ****");
+        System.out.println("Produto e valor:");
+        this.getItensCarrinho();
 
-        //mostrar itens
+        System.out.println("Valor Total:");
+        System.out.println(this.getTotalIngressos());
+
     }
 }

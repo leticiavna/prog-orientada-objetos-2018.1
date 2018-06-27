@@ -1,11 +1,11 @@
 public class Cartao {
-    private int numCartao = new int[16];
+    private String numCartao;
     private String nomePessoa;
-    private Data validade;
-    private int codSeguranca;
+    private String validade;
+    private String codSeguranca;
 
     // Construtor de Cartão
-    public Cartao(int numCartao, String nomePessoa, Data validade, int codSeguranca) {
+    public Cartao(String numCartao, String nomePessoa, String validade, String codSeguranca) {
         this.numCartao = numCartao;
         this.nomePessoa = nomePessoa;
         this.validade = validade;

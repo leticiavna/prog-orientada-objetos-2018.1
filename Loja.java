@@ -89,34 +89,38 @@ public class Loja{
                     // alguem poe numeros nos tipos de ingressos please
                     //mostra os tipos de ingressos escolhidos
                     eventos.get(numEvento).getIngressosAtuais();
-                    Cart.mostraCarrinho();
+
                     
                     // aqui ele tem show, local e data e escolhe tipo ingresso + quantidade
-                    // ******************** 
-                    // EM PROGRESSO - CONTINUE DAQUI 
-                    // **********************************
-
                     opcao = teclado.nextInt();
-<<<<<<< HEAD
-                    int numIngresso = opcao;
-                    // String chosenIngresso = eventos.get(numEvento).getIngressoEscolhido();
-                    //System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + 
-                    //". Com o ingresso: " + chosenIngresso + ". Escolha a quantidade:");
-=======
                     eventos.get(numEvento).getTipoIngressoEscolhido(opcao-1);
                     
                     System.out.println("Digite a quantidade: ");
                     int numIngressos = teclado.nextInt();
                     eventos.get(numEvento).setQtdIngressoEscolhido(numIngressos);
-                    //System.out.println("Você escolheu: " + eventos.);
-                    //String chosenIngresso = eventos.get(numEvento).getIngressoEscolhido();
-                    //System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Com o ingresso: " + chosenIngresso + ". Escolha a quantidade:");
->>>>>>> master
+                    
+                    // aqui ele confirma a compra
+                    System.out.println("Deseja continuar a sua compra? Digite '0' para cancelar ou qualquer outra para continuar.");
+                    int confirma = teclado.nextInt();
+                    if (confirma == 0) {
+                        break;
+                    }
+                    QtdCarrinho qtd = new QtdCarrinho(eventos.get(numEvento).getTipoIngressoEscolhido(opcao-1), numIngressos);
+                    Cart.adicionaNoCarrinho(qtd);
+                    Cart.mostraCarrinho();
+                    System.out.println("Você tem certeza que quer continuar? Mesmas regras anteriores");
+                    confirma = teclado.nextInt();
+                    if (confirma == 0){
+                        break;
+                    }
 
+                    System.out.println("Oba! Vamos continuar. Digite o número do seu cartão:");
+                    int dadosCartao = teclado.nextLine();
+                    //if (dadosCartao)
                 }
             }
         } while (opcao != 0); // enquanto a primeira resposta não for 0 o sistema roda
         
     }
-    // lembrar de fechar o teclado!!!!!!!!!!!!!!!!!
 }
+    // lembrar de fechar o teclado!!!!!!!!!!!!!!!!!

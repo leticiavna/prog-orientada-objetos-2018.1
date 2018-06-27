@@ -7,6 +7,7 @@ public class Evento {
 	private List<Data> datas = new ArrayList<>();
 	private List<Local> locais = new ArrayList<>();
 	private List<Ingresso> ingressos;
+	private Ingresso ingressoEscolhido;
 	int tipoIngressoEscolhido, qtdIngressoEscolhido;
 
 	// Construtor de Evento
