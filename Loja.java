@@ -2,13 +2,26 @@ import java.util.*;
 
 public class Loja{
     public static void main(String[] args) {
+        // Aqui declaramos os tipos de ingresso
+        TipoIngresso tipo1 = new TipoIngresso("Pista", 100.00);
+        TipoIngresso tipo2 = new TipoIngresso("Cadeira Superior", 200.00);
+        TipoIngresso tipo3 = new TipoIngresso("Cadeira Inferior", 150.00);
+        TipoIngresso tipo4 = new TipoIngresso("Arquibancada", 120.00);
+        TipoIngresso tipo5 = new TipoIngresso("Pista Galáctica", 400.00);
+
+        Ingresso i1 = new Ingresso(tipo1);
+        Ingresso i2 = new Ingresso(tipo2);
+        Ingresso i3 = new Ingresso(tipo3);
+        Ingresso i4 = new Ingresso(tipo4);
+        Ingresso i5 = new Ingresso(tipo5);
+
         // Aqui estamos criando as instâncias (objetos) que vão ser apresentadas no terminal
-        Evento evento1 = new Evento("Letícia e Mari dos Teclados", "Born Again");
+        Evento evento1 = new Evento("Letícia e Mari dos Teclados", "Born Again", List<i1, i2, i3>);
         evento1.criaLocalData(1995, 1, 1, "Arena Ceres no Cinturão de Asteróide");
         evento1.criaLocalData(2020, 9, 21, "Estádio de Alexandria");
         evento1.criaLocalData(2006, 6, 6, "Broadway de Nova Nova York");
         
-        Evento evento2 = new Evento("Let e Thales - Um Encontro Sombrio", "Reborned");
+        Evento evento2 = new Evento("Let e Thales - Um Encontro Sombrio", "Reborned", List<i1, i4, i5>);
         evento2.criaLocalData(1995, 1, 1, "Arena Ceres");
         evento2.criaLocalData(2020, 9, 21, "Alexandria");
         evento2.criaLocalData(2006, 6, 6, "Broadway");
@@ -17,17 +30,6 @@ public class Loja{
         List<Evento> eventos = new ArrayList<>();
         eventos.add(evento1);
         eventos.add(evento2);
-
-        // Aqui declaramos os tipos de ingresso
-        TipoIngresso tipo1 = new TipoIngresso("Pista", 100.00);
-        TipoIngresso tipo2 = new TipoIngresso("Cadeira Superior", 200.00);
-        TipoIngresso tipo3 = new TipoIngresso("Cadeira Inferior", 150.00);
-        TipoIngresso tipo4 = new TipoIngresso("Arquibancada", 120.00);
-        TipoIngresso tipo5 = new TipoIngresso("Pista Galáctica", 400.00);
-        
-        //Inicializa ingressos e seus tipos
-        Ingresso bilhete1 = new Ingresso(tipo1, tipo2, tipo3);
-        Ingresso bilhete2 = new Ingresso(tipo1, tipo4, tipo5);
 
         // Declaramos nossa variável scanner para receber dados de entrada do usuário
         Scanner teclado = new Scanner(System.in);
@@ -62,7 +64,7 @@ public class Loja{
                     System.out.println("Você escolheu: " + chosenEvento + "em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
                     switch (opcao) {                        
                         case 1:
-                            
+                            System.out.println("oii socorro");
                             break;
                     
                         default:
