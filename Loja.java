@@ -87,16 +87,23 @@ public class Loja{
                     int numLocal = opcao-1;
                     System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
                     // alguem poe numeros nos tipos de ingressos please
+                    //mostra os tipos de ingressos escolhidos
                     eventos.get(numEvento).getIngressosAtuais();
                     
                     // aqui ele tem show, local e data e escolhe tipo ingresso + quantidade
                     // ******************** 
                     // EM PROGRESSO - CONTINUE DAQUI 
                     // **********************************
+
                     opcao = teclado.nextInt();
-                    int numIngresso = opcao;
-                    String chosenIngresso = eventos.get(numEvento).getIngressoEscolhido();
-                    System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Com o ingresso: " + chosenIngresso + ". Escolha a quantidade:");
+                    eventos.get(numEvento).getTipoIngressoEscolhido(opcao);
+
+                    System.out.println("Digite a quantidade: ");
+                    int numIngressos = teclado.nextInt();
+                    eventos.get(numEvento).setQtdIngressoEscolhido(numIngressos);
+                    //System.out.println("Você escolheu: " + eventos.);
+                    //String chosenIngresso = eventos.get(numEvento).getIngressoEscolhido();
+                    //System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Com o ingresso: " + chosenIngresso + ". Escolha a quantidade:");
 
                 }
             }
