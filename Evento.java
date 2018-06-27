@@ -48,6 +48,10 @@ public class Evento {
 		}
 	}
 
+	public String getIngressoEscolhido(Ingresso i){
+		return ("Tipo: " + i.getTipoIngressonoBilhete() + ", valor: R$" + i.getValorIngressoNoBilhete());
+	}
+
 	// Função para adicionar locais e datas em um evento (usada na main)
 	public void criaLocalData(int ano, int mes, int dia, String local){
 		this.datas.add(new Data(dia, mes, ano));

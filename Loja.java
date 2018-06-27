@@ -2,6 +2,9 @@ import java.util.*;
 
 public class Loja{
     public static void main(String[] args) {
+        // Aqui declaramos o carrinho 
+        Carrinho Cart = new Carrinho(); 
+
         // Aqui declaramos os tipos de ingresso
         TipoIngresso tipo1 = new TipoIngresso("Pista", 100.00);
         TipoIngresso tipo2 = new TipoIngresso("Cadeira Superior", 200.00);
@@ -55,6 +58,7 @@ public class Loja{
             System.out.println("1 - Comprar um Ingresso");
             System.out.println("0 - Sair\n");
 
+            // Aqui é onde vai começar a interaçao
             opcao = teclado.nextInt();
             if (opcao == 1){
                 System.out.println("Escolha um dos Eventos:");
@@ -66,25 +70,27 @@ public class Loja{
                     System.out.println("Evento não existe");
                 }
                 else {
+                    // aqui ele já escolheu o show e vai escolher a data
                     String chosenEvento = eventos.get(opcao-1).getInformacoes();
                     int numEvento = opcao-1;
                     System.out.println("Você escolheu: " + chosenEvento + " Por favor escolha um local e uma data:\n");
                     // alguém coloca aqui numeros nos locais plz
                     eventos.get(opcao-1).getLocais();
 
+                    // aqui ele tem show, local e data e vai escolher um ingresso
                     opcao = teclado.nextInt();
-                    String chosenLocal = eventos.get(numEvento).getLocalEscolhido(opcao);
-                    int numLocal = opcao;
+                    String chosenLocal = eventos.get(numEvento).getLocalEscolhido(opcao-1);
+                    int numLocal = opcao-1;
                     System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
-                    switch (numLocal) {                        
-                        case 1:
-                            System.out.println("oii socorro");
-                            break;
+                    // alguem poe numeros nos tipos de ingressos please
+                    eventos.get(numEvento).getIngressosAtuais();
                     
-                        default:
-                            break;
-                    }
-                    
+                    // aqui ele tem show, local e data e escolhe tipo ingresso + quantidade
+                    opcao = teclado.nextInt();
+                    int numIngresso = opcao;
+                    String chosenIngresso = eventos.get(numEvento).getIngressoEscolhido();
+                    System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Com o ingresso: " + chosenIngresso + ". Escolha a quantidade:");
+
                 }
             }
         } while (opcao != 0);
