@@ -10,11 +10,11 @@ public class Carrinho {
     }
 
     // GETS para o carrinho, retorna quantidade total, quantidade de itens
-        
 	public double getTotalIngressos() {
 		return calculaValorTotalIngressos();
 	}
 
+    // Essa função adiciona itens no carrinho.
     public void adicionaNoCarrinho(QtdCarrinho Cart){
         itensCarrinho.add(Cart);
     }

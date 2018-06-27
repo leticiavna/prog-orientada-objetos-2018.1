@@ -24,6 +24,7 @@ public class Evento {
 		return this.turne;
 	}
 
+	// Retorna todos os locais disponíveis.
 	public void getLocais() {
 		int tamanhoLista = this.locais.size();
 		for(int i = 0; i < tamanhoLista; i++){
@@ -33,21 +34,28 @@ public class Evento {
 		System.out.println("\n");
 	}
 
+	// Retorna um único local que é o selecionado
 	public String getLocalEscolhido(int i){
 		return ("Local: " + this.locais.get(i).getNome() + ", Data: " +
 		this.datas.get(i).getData());
 	}
 	
+	// Retorna informações do evento
 	public String getInformacoes(){
 		return ("Nome: " + getNomeArtista() + " - Turnê: " + getTurne() + ".");
 	}
 
+	// Retorna todos os ingressos disponíveis
 	public void getIngressosAtuais(){
 		for (Ingresso i : ingressos){
 			System.out.println("Tipo: " + i.getTipoIngressonoBilhete() + ", valor: R$" + i.getValorIngressoNoBilhete());
 		}
 	}
 
+	// Retorna um único ingresso que é o escolhido
+	// *****************************************
+	// EM PROGRESSO
+	// *******************************************
 	public String getIngressoEscolhido(Ingresso i){
 		return ("Tipo: " + i.getTipoIngressonoBilhete() + ", valor: R$" + i.getValorIngressoNoBilhete());
 	}

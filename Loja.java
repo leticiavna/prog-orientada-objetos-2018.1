@@ -1,5 +1,7 @@
 import java.util.*;
 
+// Essa é a nossa main.
+
 public class Loja{
     public static void main(String[] args) {
         // Aqui declaramos o carrinho 
@@ -12,12 +14,14 @@ public class Loja{
         TipoIngresso tipo4 = new TipoIngresso("Arquibancada", 120.00);
         TipoIngresso tipo5 = new TipoIngresso("Pista Galáctica", 400.00);
 
+        // aqui instanciamos ingressos 
         Ingresso i1 = new Ingresso(tipo1);
         Ingresso i2 = new Ingresso(tipo2);
         Ingresso i3 = new Ingresso(tipo3);
         Ingresso i4 = new Ingresso(tipo4);
         Ingresso i5 = new Ingresso(tipo5);
         
+        // aqui cria-se listas de ingressos para incluir nas instancias de evento
         List<Ingresso> listIngresso1 = new ArrayList<>();
         listIngresso1.add(i1);
         listIngresso1.add(i2);
@@ -58,7 +62,7 @@ public class Loja{
             System.out.println("1 - Comprar um Ingresso");
             System.out.println("0 - Sair\n");
 
-            // Aqui é onde vai começar a interaçao
+            // Aqui é onde vai começar a interaçao com o user
             opcao = teclado.nextInt();
             if (opcao == 1){
                 System.out.println("Escolha um dos Eventos:");
@@ -86,6 +90,9 @@ public class Loja{
                     eventos.get(numEvento).getIngressosAtuais();
                     
                     // aqui ele tem show, local e data e escolhe tipo ingresso + quantidade
+                    // ******************** 
+                    // EM PROGRESSO - CONTINUE DAQUI 
+                    // **********************************
                     opcao = teclado.nextInt();
                     int numIngresso = opcao;
                     String chosenIngresso = eventos.get(numEvento).getIngressoEscolhido();
@@ -93,7 +100,7 @@ public class Loja{
 
                 }
             }
-        } while (opcao != 0);
+        } while (opcao != 0); // enquanto a primeira resposta não for 0 o sistema roda
         
     }
     // lembrar de fechar o teclado!!!!!!!!!!!!!!!!!
