@@ -32,6 +32,11 @@ public class Evento {
 		}
 		System.out.println("\n");
 	}
+
+	public String getLocalEscolhido(int i){
+		return ("Local: " + this.locais.get(i).getNome() + ", Data: " +
+		this.datas.get(i).getData());
+	}
 	
 	public String getInformacoes(){
 		return ("Nome: " + getNomeArtista() + " - Turnê: " + getTurne() + ".");
