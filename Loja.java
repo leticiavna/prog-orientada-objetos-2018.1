@@ -39,9 +39,13 @@ public class Loja{
                 opcao = teclado.nextInt();
                 if ((opcao - 1) > eventos.size()){
                     System.out.println("Evento não existe");
-                } else {
-                    System.out.println("Você escolheu: " + eventos.get(opcao-1).getInformacoes() + " Por favor escolha um local e uma data:\n");
+                }
+                else {
+                    String chosenEvento = eventos.get(opcao-1).getInformacoes();
+                    System.out.println("Você escolheu: " + chosenEvento + " Por favor escolha um local e uma data:\n");
                     eventos.get(opcao - 1).getLocais();
+                    opcao = teclado.nextInt();
+                    System.out.println("Você escolheu: " + chosenEvento + "em: " . ". Escolha seu tipo de ingresso:")
                 }
             }
         } while (opcao != 0);
