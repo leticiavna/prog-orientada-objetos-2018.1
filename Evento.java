@@ -7,6 +7,7 @@ public class Evento {
 	private List<Data> datas = new ArrayList<>();
 	private List<Local> locais = new ArrayList<>();
 	private List<Ingresso> ingressos;
+	int tipoIngressoEscolhido, qtdIngressoEscolhido;
 
 	// Construtor de Evento
 	public Evento(String nomeArtista, String turne, List<Ingresso> ingressos){
@@ -47,17 +48,12 @@ public class Evento {
 
 	// Retorna todos os ingressos disponíveis
 	public void getIngressosAtuais(){
+		int count = 1;
 		for (Ingresso i : ingressos){
-			System.out.println("Tipo: " + i.getTipoIngressonoBilhete() + ", valor: R$" + i.getValorIngressoNoBilhete());
+			System.out.println("Tipo " + count + ": " + i.getTipoIngressonoBilhete() + ", valor: R$" + i.getValorIngressoNoBilhete());
+			count++;
 		}
-	}
 
-	// Retorna um único ingresso que é o escolhido
-	// *****************************************
-	// EM PROGRESSO
-	// *******************************************
-	public String getIngressoEscolhido(Ingresso i){
-		return ("Tipo: " + i.getTipoIngressonoBilhete() + ", valor: R$" + i.getValorIngressoNoBilhete());
 	}
 
 	// Função para adicionar locais e datas em um evento (usada na main)
@@ -65,6 +61,16 @@ public class Evento {
 		this.datas.add(new Data(dia, mes, ano));
 		this.locais.add(new Local(local));
 	}
+
+	// Função que retorna o tipo de ingresso escolhido
+	public void getTipoIngressoEscolhido(int posIngresso){
+		System.out.println("Você escolheu o ingresso: " + ingressos.get(posIngresso).getTipoIngressonoBilhete() + " que custa: " + ingressos.get(posIngresso).getValorIngressoNoBilhete() + ".");
+		this.tipoIngressoEscolhido = posIngresso;
+	}
+
+	// Funcão que diz a quantidade desejada de ingressos
+	public void setQtdIngressoEscolhido(int qtdIngressoEscolhido) {
+		this.qtdIngressoEscolhido = qtdIngressoEscolhido;
+	}
+
 }
-
-
