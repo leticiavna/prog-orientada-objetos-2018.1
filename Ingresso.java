@@ -1,14 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ingresso{
     private Local local;
     private Evento evento;
-    private List<TipoIngresso> tipos;
+    private TipoIngresso tipos = new ArrayList<>();
 
     // construtor da classe Ingresso
     public Ingresso(TipoIngresso tipo1, TipoIngresso tipo2, TipoIngresso tipo3){
         this.tipos.add(tipo1);
-        this.tipos.add(tipo2);
+		this.tipos.add(tipo2);
         this.tipos.add(tipo3);
     }
 
@@ -30,6 +31,6 @@ public class Ingresso{
     }
     
     public double getValorIngressoNoBilhete() {
-        return tipo.getValorIngresso();
+        return tipos.getValorIngresso();
     }
 }
