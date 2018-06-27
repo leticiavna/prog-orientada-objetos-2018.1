@@ -26,8 +26,8 @@ public class Evento {
 			System.out.println("Local: " + this.locais.get(i).getNome() + ", Data: " +
 				this.datas.get(i).getData());
 		}
+		System.out.println("\n");
 	}
-
 
 	public void criaLocalData(int ano, int mes, int dia, String local){
 		this.datas.add(new Data(dia, mes, ano));
