@@ -96,8 +96,8 @@ public class Loja{
                     // **********************************
 
                     opcao = teclado.nextInt();
-                    eventos.get(numEvento).getTipoIngressoEscolhido(opcao);
-
+                    eventos.get(numEvento).getTipoIngressoEscolhido(opcao-1);
+                    
                     System.out.println("Digite a quantidade: ");
                     int numIngressos = teclado.nextInt();
                     eventos.get(numEvento).setQtdIngressoEscolhido(numIngressos);
