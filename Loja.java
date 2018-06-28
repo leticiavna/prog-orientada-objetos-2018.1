@@ -93,10 +93,11 @@ public class Loja{
                     
                     // aqui ele tem show, local e data e escolhe tipo ingresso + quantidade
                     opcao = teclado.nextInt();
+                    // mudar isso aqui. a classe evento não se responsabiliza por isso
                     eventos.get(numEvento).getTipoIngressoEscolhido(opcao-1);
-                    
                     System.out.println("Digite a quantidade: ");
                     int numIngressos = teclado.nextInt();
+                    // mudar isso aqui embaixo também. já tem uma quantidade de ingressos na classe QtdIngresso, não é pra ter em evento
                     eventos.get(numEvento).setQtdIngressoEscolhido(numIngressos);
                     
                     // aqui ele confirma a compra
@@ -105,7 +106,8 @@ public class Loja{
                     if (confirma == 0) {
                         break;
                     }
-                    QtdCarrinho qtd = new QtdCarrinho(eventos.get(numEvento).getTipoIngressoEscolhido(opcao-1), numIngressos);
+                    //ver se isso funciona, em nome da deusa beyonce vai funcionar
+                    QtdCarrinho qtd = new QtdCarrinho(eventos.get(numEvento).ingressos.get(opcao-1), numIngressos);
                     Cart.adicionaNoCarrinho(qtd);
                     Cart.mostraCarrinho();
                     System.out.println("Você tem certeza que quer continuar? Mesmas regras anteriores");
