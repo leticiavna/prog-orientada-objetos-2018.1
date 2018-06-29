@@ -25,7 +25,9 @@ public class Evento {
 	public String getTurne(){
 		return this.turne;
 	}
-
+	public List<Ingresso> getIngressos(){
+		return this.ingressos;
+	}
 	// Retorna todos os locais disponíveis.
 	public void getLocais() {
 		int tamanhoLista = this.locais.size();
