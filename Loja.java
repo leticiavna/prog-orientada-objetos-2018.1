@@ -105,8 +105,8 @@ public class Loja{
                     if (confirma == 0) {
                         break;
                     }
-                    QtdCarrinho qtd = new QtdCarrinho(eventos.get(numEvento).getTipoIngressoEscolhido(opcao-1), numIngressos);
-                    Cart.adicionaNoCarrinho(qtd);
+                    //QtdCarrinho qtd = new QtdCarrinho(eventos.get(numEvento).getTipoIngressoEscolhido(opcao-1), numIngressos);
+                    //Cart.adicionaNoCarrinho(qtd);
                     Cart.mostraCarrinho();
                     System.out.println("Você tem certeza que quer continuar? Mesmas regras anteriores");
                     confirma = teclado.nextInt();
@@ -115,7 +115,7 @@ public class Loja{
                     }
 
                     System.out.println("Oba! Vamos continuar. Digite o número do seu cartão:");
-                    int dadosCartao = teclado.nextLine();
+                    //int dadosCartao = teclado.nextLine();
                     //if (dadosCartao)
                 }
             }

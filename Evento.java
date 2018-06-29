@@ -30,7 +30,7 @@ public class Evento {
 	public void getLocais() {
 		int tamanhoLista = this.locais.size();
 		for(int i = 0; i < tamanhoLista; i++){
-			System.out.println("Local: " + this.locais.get(i).getNome() + ", Data: " +
+			System.out.println("Local " + (i+1) +": "+ this.locais.get(i).getNome() + ", Data: " +
 				this.datas.get(i).getData());
 		}
 		System.out.println("\n");
