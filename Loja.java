@@ -86,7 +86,6 @@ public class Loja{
                     String chosenLocal = eventos.get(numEvento).getLocalEscolhido(opcao-1);
                     int numLocal = opcao-1;
                     System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
-                    // alguem poe numeros nos tipos de ingressos please
                     //mostra os tipos de ingressos escolhidos
                     eventos.get(numEvento).getIngressosAtuais();
 
@@ -106,7 +105,7 @@ public class Loja{
                     if (confirma == 0) {
                         break;
                     }
-                    //ver se isso funciona, em nome da deusa beyonce vai funcionar
+                    //Relaciona quantidade de ingressos e o ingresso escolhido na classe QtdCarrinho
                     QtdCarrinho qtd = new QtdCarrinho(eventos.get(numEvento).getIngressos().get(opcao-1), numIngressos);
                     Cart.adicionaNoCarrinho(qtd);
                     Cart.mostraCarrinho();
