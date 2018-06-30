@@ -39,8 +39,7 @@ public class Carrinho {
 		System.out.println("NOME DO EVENTO, TIPO DE INGRESSO, QUANTIDADE, VALOR UNITÁRIO");
 		this.getItensCarrinho();
 
-		System.out.println("VALOR TOTAL: R$ ");
-		System.out.println(this.getTotalIngressos());
+		System.out.println("VALOR TOTAL: R$ " + this.getTotalIngressos());
 		System.out.println("*************** SEU CARRINHO ***************");
 		System.out.println("\n");
 	}

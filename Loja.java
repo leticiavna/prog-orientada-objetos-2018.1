@@ -131,28 +131,30 @@ public class Loja{
 
 		// usuário vai continuar a compra
 		// ele começa a inserir seus dados.
-		Cartao C = new Cartao();
-
-		System.out.println("Digite o número do seu cartão, com 16 dígitos:");
-		String dado = teclado.nextLine();
-		C.setNumCartao(dado);
-
+		Cartao card = new Cartao();
 		String dados;
+		
+		System.out.println("Digite o número do seu cartão, com 16 dígitos:");
+		dados = teclado.nextLine();
+		dados = teclado.nextLine();
+		card.setNumCartao(dados);
+
 		System.out.println("Agora insira seu nome como consta no cartão:");
 		dados = teclado.nextLine();
-		C.setNomePessoa(dados);
+		card.setNomePessoa(dados);
 
-		System.out.println("Insira a data de validade no formato DD/YY");
+		System.out.println("Insira a data de validade no formato DD/YY, 5 dígitos:");
 		dados = teclado.nextLine();
-		C.setValidade(dados);
+		card.setValidade(dados);
 
 		System.out.println("Finalmente..... coloque o número de segurança, com 3 dígitos:");
 		dados = teclado.nextLine();
-		C.setCodSeguranca(dados);
+		card.setCodSeguranca(dados);
 
 		System.out.println("\nValidando.... :| ");
 
-		if (C.cartaoValido()) {
+		// leva para a funcção de validação da classe Cartao
+		if (card.cartaoValido()) {
 			System.out.println("\nSucesso! Compra realizada. Curta bastante bb :D\n");
 		}
 		else {

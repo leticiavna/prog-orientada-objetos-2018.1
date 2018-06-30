@@ -31,7 +31,7 @@ public class Cartao {
 		if (((this.numCartao instanceof String) && (this.numCartao.length() == 16)) &&
 			 (this.nomePessoa instanceof String) && 
 			 ((this.codSeguranca instanceof String) && (this.codSeguranca.length() == 3)) &&
-			 (this.validade instanceof String)) {
+			 ((this.validade instanceof String) && (this.validade.length() == 5))) {
 			return true;
 		}
 		else return false;
