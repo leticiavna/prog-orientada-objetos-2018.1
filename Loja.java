@@ -7,7 +7,7 @@ public class Loja{
 				// Aqui declaramos o carrinho 
 				Carrinho Cart = new Carrinho();
 				
-				//Instanciei uma variável Evento só por que fica chato ter que repetir td hora a mesma coisa
+				//Instanciamos uma variável Evento só por que fica chato ter que repetir td hora a mesma coisa
 				// e também pra legibilizar o código
 				Evento E;
 
@@ -105,27 +105,25 @@ public class Loja{
 										int quantidade = teclado.nextInt();
                     
                     // aqui ele confirma a compra
-                    System.out.println("Deseja continuar a sua compra? Digite '0' para cancelar ou qualquer outra para continuar.");
+                    System.out.println("Deseja continuar a sua compra? Digite '1' para continuar ou '0' para cancelar.");
                     int confirma = teclado.nextInt();
                     if (confirma == 0) {
 												break;
 										}
 
-										// mudar isso aqui. a classe evento não se responsabiliza por isso
-										E.getIngressos().get(numIngresso).getTipoIngressonoBilhete();
                     //Relaciona quantidade de ingressos e o ingresso escolhido na classe QtdCarrinho
                     QtdCarrinho qtd = new QtdCarrinho(E.getIngressos().get(opcao-1), quantidade);
                     Cart.adicionaNoCarrinho(qtd);
                     Cart.mostraCarrinho();
-                    System.out.println("Você tem certeza que quer continuar? Mesmas regras anteriores");
+                    System.out.println("Você tem certeza que quer continuar? Digite '1' para continuar ou '0' para cancelar.");
                     confirma = teclado.nextInt();
                     if (confirma == 0){
                         break;
                     }
 
                     System.out.println("Oba! Vamos continuar. Digite o número do seu cartão:");
-                    //int dadosCartao = teclado.nextLine();
-                    //if (dadosCartao)
+                    String numeroDoCartao = teclado.nextLine();
+                    
                 }
             }
         } while (opcao != 0); // enquanto a primeira resposta não for 0 o sistema roda

@@ -5,15 +5,28 @@ public class Cartao {
     private String codSeguranca;
 
     // Construtor de Cartão
-    public Cartao(String numCartao, String nomePessoa, String validade, String codSeguranca) {
-        this.numCartao = numCartao;
-        this.nomePessoa = nomePessoa;
-        this.validade = validade;
-        this.codSeguranca = codSeguranca;
+    public Cartao() {
     }
 
-    
-    // método que valida os dados do cartão
+    // SETS para a criação e validação do cartão
+	public void setCodSeguranca(String codSeguranca) {
+		this.codSeguranca = codSeguranca;
+	}
+
+	public void setValidade(String validade) {
+		this.validade = validade;
+	}
+
+	public void setNomePessoa(String nomePessoa) {
+		this.nomePessoa = nomePessoa;
+	}
+
+	public void setNumCartao(String numCartao) {
+		this.numCartao = numCartao;
+	}
+
+
+	// método que valida os dados do cartão
     public boolean validaDadosCartao() {
         return true;
     }
