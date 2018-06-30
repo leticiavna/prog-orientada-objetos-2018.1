@@ -33,7 +33,6 @@ public class Evento {
 			System.out.println("Local " + (i+1) +": "+ this.locais.get(i).getNome() + ", Data: " +
 				this.datas.get(i).getData());
 		}
-		System.out.println("\n");
 	}
 
 	// Retorna um único local que é o selecionado

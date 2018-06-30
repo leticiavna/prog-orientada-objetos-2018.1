@@ -5,7 +5,6 @@ public class Local{
 	// Construtor de local
 	public Local(String nome){
 		this.nome = nome;
-	//	this.nome = cidade;
 	} 
 
 	// GETS para retornar os valores da classe

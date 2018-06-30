@@ -1,12 +1,12 @@
 public class Cartao {
-    private String numCartao;
-    private String nomePessoa;
-    private String validade;
-    private String codSeguranca;
+	private String numCartao;
+	private String nomePessoa;
+	private String validade;
+	private String codSeguranca;
 
-    // Construtor de Cartão
-    public Cartao() {
-    }
+	// Construtor de Cartão
+	public Cartao() {
+	}
 
 	// SETS para a criação e validação do cartão
 
@@ -27,15 +27,15 @@ public class Cartao {
 	}
 
 	// método que valida os dados do cartão
-    private boolean validaDadosCartao() {
+	private boolean validaDadosCartao() {
 		if (((this.numCartao instanceof String) && (this.numCartao.length() == 16)) &&
 			 (this.nomePessoa instanceof String) && 
-			 ((this.codSeguranca instanceof String) && (this.numCartao.length() == 3)) &&
+			 ((this.codSeguranca instanceof String) && (this.codSeguranca.length() == 3)) &&
 			 (this.validade instanceof String)) {
 			return true;
 		}
 		else return false;
-    }
+	}
 	
 	public boolean cartaoValido(){
 		return this.validaDadosCartao();
