@@ -59,18 +59,18 @@ public class Loja{
 	Scanner teclado = new Scanner(System.in);
 
 	// Começamos a apresentar os dados na tela
-	System.out.println("Oi, chuchu! Bem vindo à Lojinha dos Bilhetes Intergaláticos :) \n");
+	System.out.println("Oi, chuchu! Bem vindo à Lojinha dos Bilhetes Intergaláticos :)");
 	int opcao;
 	do {
-		System.out.println("Digite sua opção: ");
+		System.out.println("\nDigite sua opção: ");
 		System.out.println("1 - Comprar um Ingresso");
 		System.out.println("2 - Mensagem positiva");
-		System.out.println("0 - Sair\n");
+		System.out.println("0 - Sair");
 
 		// Aqui é onde vai começar a interaçao com o user
 		opcao = teclado.nextInt();
 		if (opcao == 1){
-			System.out.println("Escolha um dos Eventos:");
+			System.out.println("\nEscolha um dos Eventos:");
 			for (int i=0; i<eventos.size(); i++){
 				System.out.println("Evento " + (i+1) + ": " + eventos.get(i).getInformacoes());
 			}
@@ -85,14 +85,14 @@ public class Loja{
 				E = eventos.get(numEvento);
 
 				// aqui escolhe local e data
-				System.out.println("Você escolheu: " + chosenEvento + " Por favor escolha um local e uma data:\n");
+				System.out.println("\nVocê escolheu: " + chosenEvento + " Por favor escolha um local e uma data:");
 				E.getLocais();
 				opcao = teclado.nextInt();
 				int numLocal = opcao-1;
 				String chosenLocal = E.getLocalEscolhido(numLocal);
 	
 				// aqui ele vai escolher o ingresso
-				System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
+				System.out.println("\nVocê escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
 				E.getIngressosAtuais();
 				opcao = teclado.nextInt();
 				int numIngresso = opcao-1;
@@ -109,7 +109,7 @@ public class Loja{
 				Cart.adicionaNoCarrinho(qtd);
 				System.out.println("Show! Adicionado no seu carrinho");
 				// aqui ele confirma a compra
-				System.out.println("Deseja continuar comprando? Digite '1' para comprar mais ou '0' para ver seu carrinho.");
+				System.out.println("\nDeseja continuar comprando? Digite '1' para comprar mais ou '0' para ver seu carrinho.");
 				opcao = teclado.nextInt();
 			}
 		}
@@ -124,10 +124,10 @@ public class Loja{
 	System.out.println("E aí, vamos fechar? Digite '1' para continuar ou '0' para cancelar.");
 	int confirma = teclado.nextInt();
 	if (confirma == 0){
-		System.out.println("Vejo você na próxima!");
+		System.out.println("\nVejo você na próxima!\n");
 	}
 	else {
-		System.out.println("Oba! Vamos continuar.");
+		System.out.println("\nOba! Vamos continuar.");
 
 		// usuário vai continuar a compra
 		// ele começa a inserir seus dados.
@@ -150,10 +150,10 @@ public class Loja{
 		dados = teclado.nextLine();
 		C.setCodSeguranca(dados);
 
-		System.out.println("Validando.... :| ");
+		System.out.println("\nValidando.... :| ");
 
 		if (C.cartaoValido()) {
-			System.out.println("Sucesso! Compra realizada. Curta bastante bb :D");
+			System.out.println("\nSucesso! Compra realizada. Curta bastante bb :D\n");
 		}
 		else {
 			System.out.println(("O-oh. Algo de errado não está certo. Tente novamente :("));
