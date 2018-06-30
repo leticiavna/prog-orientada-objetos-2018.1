@@ -14,6 +14,10 @@ public class QtdCarrinho {
     // GETS para retornar os valores da classe
     public Ingresso getIngresso(){
         return ingresso;
+    } 
+    
+    public String getNomeIngresso(){
+        return ingresso.getTipoIngressonoBilhete();
     }
 
     public int getQuantidadeIngresso(){
