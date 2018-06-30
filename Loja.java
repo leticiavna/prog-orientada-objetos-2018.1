@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Loja{
   public static void main(String[] args) {
+
 		// Aqui declaramos o carrinho 
 		Carrinho Cart = new Carrinho();
 		
@@ -27,7 +28,7 @@ public class Loja{
      
     // aqui cria-se listas de ingressos para incluir nas instancias de evento
     List<Ingresso> listIngresso1 = new ArrayList<>();
-    listIngresso1.add(i1);
+		listIngresso1.add(i1);
     listIngresso1.add(i2);
     listIngresso1.add(i3);
 
@@ -57,7 +58,7 @@ public class Loja{
     // Declaramos nossa variável scanner para receber dados de entrada do usuário
     Scanner teclado = new Scanner(System.in);
 
-    // Começamos a iterar e apresentar os dados na tela
+    // Começamos a apresentar os dados na tela
     int opcao;
     do {
       // Interface amigável
@@ -69,32 +70,33 @@ public class Loja{
       // Aqui é onde vai começar a interaçao com o user
       opcao = teclado.nextInt();
       if (opcao == 1){
-        System.out.println("Escolha um dos Eventos:");
+				System.out.println("Escolha um dos Eventos:");
         for (int i=0; i<eventos.size(); i++){
-	        System.out.println("Evento " + (i + 1) + ": " + eventos.get(i).getInformacoes());
+	      	System.out.println("Evento " + (i+1) + ": " + eventos.get(i).getInformacoes());
         }
         opcao = teclado.nextInt();
         if ((opcao-1) > eventos.size()){
 	        System.out.println("Evento não existe");
-        }
+        	}
         else {
-          // aqui ele já escolheu o show e vai escolher a data
+					// aqui ele escolheu o show
 					String chosenEvento = eventos.get(opcao-1).getInformacoes();
 					int numEvento = opcao-1;
 					E = eventos.get(numEvento);
+
+					// aqui escolhe local e data
 					System.out.println("Você escolheu: " + chosenEvento + " Por favor escolha um local e uma data:\n");
 					E.getLocais();
-					
-					// aqui ele tem show, local e data e vai escolher um ingresso
           opcao = teclado.nextInt();
-          String chosenLocal = E.getLocalEscolhido(opcao-1);
-          int numLocal = opcao-1;
+					int numLocal = opcao-1;
+					String chosenLocal = E.getLocalEscolhido(numLocal);
+					
+					// aqui ele vai escolher o ingresso
           System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
           E.getIngressosAtuais();
-                  
-          // aqui ele tem show, local e data e escolhe tipo ingresso + quantidade
 					opcao = teclado.nextInt();
 					int numIngresso = opcao-1;
+					// aqui vai escolher a quantidade
 					System.out.println("Você escolheu o ingresso: " + 
 					E.getIngressos().get(numIngresso).getTipoIngressonoBilhete() + 
 					" que custa: " + E.getIngressos().get(numIngresso).getValorIngressoNoBilhete() + ".");
@@ -109,21 +111,34 @@ public class Loja{
 					}
 
 					//Relaciona quantidade de ingressos e o ingresso escolhido na classe QtdCarrinho
-          QtdCarrinho qtd = new QtdCarrinho(E.getIngressos().get(opcao-1), quantidade);
+          QtdCarrinho qtd = new QtdCarrinho(E.getIngressos().get(numIngresso), quantidade);
           Cart.adicionaNoCarrinho(qtd);
-          Cart.mostraCarrinho();
+					Cart.mostraCarrinho();
+					
+					// próxima confirmação
           System.out.println("Você tem certeza que quer continuar? Digite '1' para continuar ou '0' para cancelar.");
           confirma = teclado.nextInt();
           if (confirma == 0){
             break;
           }
 
-          System.out.println("Oba! Vamos continuar. Digite o número do seu cartão:");
-          String numeroDoCartao = teclado.nextLine();             
-       	 }
-     	 }
-			} 
-			while (opcao != 0); // enquanto a primeira resposta não for 0 o sistema roda
-  	}
-	}
-    // lembrar de fechar o teclado!!!!!!!!!!!!!!!!!
+					// usuário vai continuar a compra
+					System.out.println("Oba! Vamos continuar. Digite o número do seu cartão:");
+					Cartao C = new Cartao();
+					String numeroDoCartao = teclado.nextLine();
+					System.out.println("Validando.... :| ");
+					if (C.validaDadosCartao()) {
+						System.out.println("Sucesso! Compra realizada. Curta bastante bb :D");
+						}
+					else {
+						System.out.println(("O-oh. Algo de errado não está certo. Tente novamente :("));
+					}
+					
+					System.out.println("*****************************************************");
+					System.out.println("\n");
+       	}
+     	}
+		} 
+		while (opcao != 0); // enquanto a primeira resposta não for 0 o sistema roda
+  }
+}

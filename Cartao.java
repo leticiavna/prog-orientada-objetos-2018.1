@@ -9,8 +9,8 @@ public class Cartao {
     }
 
     // SETS para a criação e validação do cartão
-	public void setCodSeguranca(String codSeguranca) {
-		this.codSeguranca = codSeguranca;
+	public void setCodSeguranca(String codSeg) {
+		this.codSeguranca = codSeg;
 	}
 
 	public void setValidade(String validade) {
