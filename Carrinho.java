@@ -12,7 +12,7 @@ public class Carrinho {
 	// GETS para o carrinho, retorna quantidade total, quantidade de itens
 	public void getItensCarrinho(){
 		for(QtdCarrinho item: itensCarrinho){
-			System.out.println(item.getNomeIngresso() + ", "
+			System.out.println(item.getIngresso().getInformacoesBilhete() + " " + item.getNomeIngresso() + ", "
 			 + item.getQuantidadeIngresso() +", R$: " + item.getIngresso().getValorIngressoNoBilhete());
 		}
 	}

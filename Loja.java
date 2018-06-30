@@ -40,12 +40,18 @@ public class Loja{
 
 	// Aqui estamos criando as instâncias (objetos) que vão ser apresentadas no terminal
 	Evento evento1 = new Evento("Letícia e Mari dos Teclados", "Born Again", listIngresso1);
+	for(Ingresso i: listIngresso1){
+		i.setEvento(evento1);
+	}
 	evento1.criaLocalData(1995, 1, 1, "Arena Ceres no Cinturão de Asteróide");
 	evento1.criaLocalData(2020, 9, 21, "Estádio de Alexandria");
 	evento1.criaLocalData(2006, 6, 6, "Broadway de Nova Nova York");
 
 
 	Evento evento2 = new Evento("Let e Thales - Um Encontro Sombrio", "Reborned", listIngresso2);
+	for(Ingresso i: listIngresso2){
+		i.setEvento(evento2);
+	}
 	evento2.criaLocalData(1995, 1, 1, "Arena Ceres");
 	evento2.criaLocalData(2020, 9, 21, "Alexandria");
 	evento2.criaLocalData(2006, 6, 6, "Broadway");

@@ -13,11 +13,18 @@ public class Ingresso{
 		this.tipo = tipo;
 	}
 
+	public void setEvento(Evento nome) {
+		this.nome = nome;
+	}
+
 	// GETS para retornar o valor dos atributos (obedecendo o encapsulamento)
 	public String getTipoIngressonoBilhete() {
 		return tipo.getTipoIngresso();   
 	}
 	
+	public String getInformacoesBilhete(){
+		return nome.getInformacoes();
+	}
 	public double getValorIngressoNoBilhete() {
 		return tipo.getValorIngresso();
 	}
