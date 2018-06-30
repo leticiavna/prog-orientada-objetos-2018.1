@@ -1,4 +1,4 @@
-// Classe data para facilitar o código.
+// Criamos essa classe Data para facilitar o código.
 public class Data{
 
     private int dia;

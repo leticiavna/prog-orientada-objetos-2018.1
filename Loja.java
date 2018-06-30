@@ -120,14 +120,33 @@ public class Loja{
           confirma = teclado.nextInt();
           if (confirma == 0){
             break;
-          }
+					}
+					System.out.println("Oba! Vamos continuar.");
 
 					// usuário vai continuar a compra
-					System.out.println("Oba! Vamos continuar. Digite o número do seu cartão:");
+					// ele começa a inserir seus dados.
 					Cartao C = new Cartao();
-					String numeroDoCartao = teclado.nextLine();
+					String dados;
+
+					System.out.println("Digite o número do seu cartão:");
+					dados = teclado.nextLine();
+					C.setNumCartao(dados);
+
+					System.out.println("Agora insira seu nome como consta no cartão:");
+					dados = teclado.nextLine();
+					C.setNomePessoa(dados);
+
+					System.out.println("Insira a data de validade no formato DD/YY");
+					dados = teclado.nextLine();
+					C.setValidade(dados);
+
+					System.out.println("Finalmente..... coloque o número de segurança:");
+					dados = teclado.nextLine();
+					C.setCodSeguranca(dados);
+
 					System.out.println("Validando.... :| ");
-					if (C.validaDadosCartao()) {
+
+					if (C.cartaoValido()) {
 						System.out.println("Sucesso! Compra realizada. Curta bastante bb :D");
 						}
 					else {
@@ -137,8 +156,8 @@ public class Loja{
 					System.out.println("*****************************************************");
 					System.out.println("\n");
        	}
-     	}
+			 }
 		} 
 		while (opcao != 0); // enquanto a primeira resposta não for 0 o sistema roda
-  }
+	}
 }

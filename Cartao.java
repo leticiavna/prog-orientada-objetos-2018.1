@@ -8,9 +8,10 @@ public class Cartao {
     public Cartao() {
     }
 
-    // SETS para a criação e validação do cartão
-	public void setCodSeguranca(String codSeg) {
-		this.codSeguranca = codSeg;
+	// SETS para a criação e validação do cartão
+
+	public void setNumCartao(String numCartao) {
+		this.numCartao = numCartao;
 	}
 
 	public void setValidade(String validade) {
@@ -21,14 +22,22 @@ public class Cartao {
 		this.nomePessoa = nomePessoa;
 	}
 
-	public void setNumCartao(String numCartao) {
-		this.numCartao = numCartao;
+	public void setCodSeguranca(String codSeg) {
+		this.codSeguranca = codSeg;
 	}
 
-
 	// método que valida os dados do cartão
-    public boolean validaDadosCartao() {
-        return true;
+    private boolean validaDadosCartao() {
+		if (((this.numCartao instanceof String) && (this.numCartao.length() == 16)) &&
+			 (this.nomePessoa instanceof String) && 
+			 ((this.codSeguranca instanceof String) && (this.numCartao.length() == 3)) &&
+			 (this.validade instanceof String)) {
+			return true;
+		}
+		else return false;
     }
-    
+	
+	public boolean cartaoValido(){
+		return this.validaDadosCartao();
+	}
 }
