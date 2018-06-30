@@ -64,7 +64,9 @@ public class Loja{
 	do {
 		System.out.println("\nDigite sua opção: ");
 		System.out.println("1 - Comprar um Ingresso");
-		System.out.println("2 - Mensagem positiva");
+		System.out.println("2 - Mostrar Carrinho");
+		System.out.println("3 - Fechar Compra");
+		System.out.println("4 - Mensagem positiva");
 		System.out.println("0 - Sair");
 
 		// Aqui é onde vai começar a interaçao com o user
@@ -109,60 +111,67 @@ public class Loja{
 				Cart.adicionaNoCarrinho(qtd);
 				System.out.println("Show! Adicionado no seu carrinho");
 				// aqui ele confirma a compra
-				System.out.println("\nDeseja continuar comprando? Digite '1' para comprar mais ou '0' para ver seu carrinho.");
+				System.out.println("\nDeseja continuar comprando? Digite '1' para comprar mais ou '2' para ver seu carrinho.");
 				opcao = teclado.nextInt();
 			}
 		}
+
 		if (opcao == 2) {
-			System.out.println("A mudança é o processo essencial de toda a existência. ;) \n");
+			Cart.mostraCarrinho();
 		}
-	} while (opcao != 0); // enquanto a resposta não for 0 o sistema roda
 
-	Cart.mostraCarrinho();
+		if (opcao == 3) {
+			Cart.mostraCarrinho();
+			
+			// próxima confirmação
+			System.out.println("E aí, vamos fechar? Digite '1' para continuar e comprar ou '0' para cancelar a compra.");
+			int confirma = teclado.nextInt();
+			if (confirma == 0){
+				System.out.println("\nVejo você na próxima!\n");
+			}
+			else {
+				System.out.println("\nOba! Vamos continuar.");
 	
-	// próxima confirmação
-	System.out.println("E aí, vamos fechar? Digite '1' para continuar ou '0' para cancelar.");
-	int confirma = teclado.nextInt();
-	if (confirma == 0){
-		System.out.println("\nVejo você na próxima!\n");
-	}
-	else {
-		System.out.println("\nOba! Vamos continuar.");
+				// usuário vai continuar a compra
+				// ele começa a inserir seus dados.
+				Cartao card = new Cartao();
+				String dados;
+			
+				System.out.println("Digite o número do seu cartão, com 16 dígitos:");
+				dados = teclado.nextLine();
+				dados = teclado.nextLine();
+				card.setNumCartao(dados);
+	
+				System.out.println("Agora insira seu nome como consta no cartão:");
+				dados = teclado.nextLine();
+				card.setNomePessoa(dados);
+	
+				System.out.println("Insira a data de validade no formato DD/YY, 5 dígitos:");
+				dados = teclado.nextLine();
+				card.setValidade(dados);
+	
+				System.out.println("Finalmente..... coloque o número de segurança, com 3 dígitos:");
+				dados = teclado.nextLine();
+				card.setCodSeguranca(dados);
+	
+				System.out.println("\nValidando.... :| ");
+	
+				// leva para a funcção de validação da classe Cartao
+				if (card.cartaoValido()) {
+					System.out.println("\nSucesso! Compra realizada. Curta bastante bb :D\n");
+				}
+				else {
+					System.out.println(("O-oh. Algo de errado não está certo. Tente novamente :("));
+				}
+	
+				System.out.println("*****************************************************");
+				System.out.println("\n");
+				}
+			}
 
-		// usuário vai continuar a compra
-		// ele começa a inserir seus dados.
-		Cartao card = new Cartao();
-		String dados;
-		
-		System.out.println("Digite o número do seu cartão, com 16 dígitos:");
-		dados = teclado.nextLine();
-		dados = teclado.nextLine();
-		card.setNumCartao(dados);
-
-		System.out.println("Agora insira seu nome como consta no cartão:");
-		dados = teclado.nextLine();
-		card.setNomePessoa(dados);
-
-		System.out.println("Insira a data de validade no formato DD/YY, 5 dígitos:");
-		dados = teclado.nextLine();
-		card.setValidade(dados);
-
-		System.out.println("Finalmente..... coloque o número de segurança, com 3 dígitos:");
-		dados = teclado.nextLine();
-		card.setCodSeguranca(dados);
-
-		System.out.println("\nValidando.... :| ");
-
-		// leva para a funcção de validação da classe Cartao
-		if (card.cartaoValido()) {
-			System.out.println("\nSucesso! Compra realizada. Curta bastante bb :D\n");
+		if (opcao == 4) {
+				System.out.println("A mudança é o processo essencial de toda a existência. ;) \n");
 		}
-		else {
-			System.out.println(("O-oh. Algo de errado não está certo. Tente novamente :("));
-		}
-
-		System.out.println("*****************************************************");
-		System.out.println("\n");
-		}
+	 } while (opcao != 0); // enquanto a resposta não for 0 o sistema roda
 	}
 }
