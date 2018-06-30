@@ -4,8 +4,12 @@ import java.util.*;
 
 public class Loja{
     public static void main(String[] args) {
-        // Aqui declaramos o carrinho 
-        Carrinho Cart = new Carrinho(); 
+				// Aqui declaramos o carrinho 
+				Carrinho Cart = new Carrinho();
+				
+				//Instanciei uma variável Evento só por que fica chato ter que repetir td hora a mesma coisa
+				// e também pra legibilizar o código
+				Evento E;
 
         // Aqui declaramos os tipos de ingresso
         TipoIngresso tipo1 = new TipoIngresso("Pista", 100.00);
@@ -75,38 +79,42 @@ public class Loja{
                 }
                 else {
                     // aqui ele já escolheu o show e vai escolher a data
-                    String chosenEvento = eventos.get(opcao-1).getInformacoes();
-                    int numEvento = opcao-1;
+										String chosenEvento = eventos.get(opcao-1).getInformacoes();
+										int numEvento = opcao-1;
+										E = eventos.get(numEvento);
                     System.out.println("Você escolheu: " + chosenEvento + " Por favor escolha um local e uma data:\n");
                     // alguém coloca aqui numeros nos locais plz
-                    eventos.get(opcao-1).getLocais();
+                    E.getLocais();
 
                     // aqui ele tem show, local e data e vai escolher um ingresso
                     opcao = teclado.nextInt();
-                    String chosenLocal = eventos.get(numEvento).getLocalEscolhido(opcao-1);
+                    String chosenLocal = E.getLocalEscolhido(opcao-1);
                     int numLocal = opcao-1;
                     System.out.println("Você escolheu: " + chosenEvento + " Em: " + chosenLocal + ". Escolha seu tipo de ingresso: ");
                     //mostra os tipos de ingressos escolhidos
-                    eventos.get(numEvento).getIngressosAtuais();
+                    E.getIngressosAtuais();
 
                     
                     // aqui ele tem show, local e data e escolhe tipo ingresso + quantidade
-                    opcao = teclado.nextInt();
-                    // mudar isso aqui. a classe evento não se responsabiliza por isso
-                    eventos.get(numEvento).getTipoIngressoEscolhido(opcao-1);
+										opcao = teclado.nextInt();
+										int numIngresso = opcao-1;
+										System.out.println("Você escolheu o ingresso: " + 
+										E.getIngressos().get(numIngresso).getTipoIngressonoBilhete() + 
+										" que custa: " + E.getIngressos().get(numIngresso).getValorIngressoNoBilhete() + ".");
                     System.out.println("Digite a quantidade: ");
-                    int numIngressos = teclado.nextInt();
-                    // mudar isso aqui embaixo também. já tem uma quantidade de ingressos na classe QtdIngresso, não é pra ter em evento
-                    eventos.get(numEvento).setQtdIngressoEscolhido(numIngressos);
+										int quantidade = teclado.nextInt();
                     
                     // aqui ele confirma a compra
                     System.out.println("Deseja continuar a sua compra? Digite '0' para cancelar ou qualquer outra para continuar.");
                     int confirma = teclado.nextInt();
                     if (confirma == 0) {
-                        break;
-                    }
+												break;
+										}
+
+										// mudar isso aqui. a classe evento não se responsabiliza por isso
+										E.getIngressos().get(numIngresso).getTipoIngressonoBilhete();
                     //Relaciona quantidade de ingressos e o ingresso escolhido na classe QtdCarrinho
-                    QtdCarrinho qtd = new QtdCarrinho(eventos.get(numEvento).getIngressos().get(opcao-1), numIngressos);
+                    QtdCarrinho qtd = new QtdCarrinho(E.getIngressos().get(opcao-1), quantidade);
                     Cart.adicionaNoCarrinho(qtd);
                     Cart.mostraCarrinho();
                     System.out.println("Você tem certeza que quer continuar? Mesmas regras anteriores");

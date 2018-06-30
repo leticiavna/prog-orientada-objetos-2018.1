@@ -12,7 +12,8 @@ public class Carrinho {
     // GETS para o carrinho, retorna quantidade total, quantidade de itens
     public void getItensCarrinho(){
         for(QtdCarrinho item: itensCarrinho){
-            System.out.println(item.getNomeIngresso() + ", " + item.getValorDoTipo());
+            System.out.println(item.getNomeIngresso() + ", "
+             + item.getQuantidadeIngresso() +", " + item.getValorDoTipo());
         }
     }
 	public double getTotalIngressos() {
@@ -26,7 +27,6 @@ public class Carrinho {
     
     // Essa função pega todos os ingressos e seus valores (já com a quantidade multiplicada) e retorna o valor total.
     private double calculaValorTotalIngressos(){
-        double totalIngressos = 0.0;
         for(int i = 0; i < itensCarrinho.size(); i++){
             totalIngressos += itensCarrinho.get(i).getValorDoTipo();
         }
