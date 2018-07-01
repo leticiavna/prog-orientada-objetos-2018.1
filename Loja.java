@@ -129,7 +129,7 @@ public class Loja{
 				QtdCarrinho qtd = new QtdCarrinho(E.getIngressos().get(numIngresso), quantidade);
 				// Adiciona esse item no carrinho
 				Cart.adicionaNoCarrinho(qtd);
-				System.out.println("Show! Adicionado no seu carrinho");
+				System.out.println("Show! Adicionado no seu carrinho.");
 				// aqui ele confirma a compra
 				System.out.println("\nDeseja continuar comprando? Digite '1' para comprar mais ou '2' para ver seu carrinho.");
 				opcao = teclado.nextInt();
@@ -190,7 +190,7 @@ public class Loja{
 			}
 
 		if (opcao == 4) {
-				System.out.println("A mudança é o processo essencial de toda a existência. ;) \n");
+				System.out.println("\nA mudança é o processo essencial de toda a existência. ;) \n");
 		}
 	 } while (opcao != 0); // enquanto a resposta não for 0 o sistema roda
 	}
