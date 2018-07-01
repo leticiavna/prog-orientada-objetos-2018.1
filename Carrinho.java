@@ -43,4 +43,9 @@ public class Carrinho {
 		System.out.println("*************** SEU CARRINHO ***************");
 		System.out.println("\n");
 	}
+
+	public void limpaCarrinho(){
+		itensCarrinho.clear();
+		totalIngressos = 0.0;
+	}
 }

@@ -179,6 +179,7 @@ public class Loja{
 				// leva para a funcção de validação da classe Cartao
 				if (card.cartaoValido()) {
 					System.out.println("\nSucesso! Compra realizada. Curta bastante bb :D\n");
+					Cart.limpaCarrinho();
 				}
 				else {
 					System.out.println(("O-oh. Algo de errado não está certo. Tente novamente :("));
