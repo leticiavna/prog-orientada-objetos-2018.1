@@ -19,6 +19,8 @@ etc......
 ```
 depois execute a main:
 
-`java Loja`
+```
+java Loja
+```
 
 Trabalho realizado por [Letícia](https://www.github.com/leticiavna "Letícia's Github"), [Mariana](https://www.github.com/ferreira-mariana "Mariana's Github") e [Thales](https://www.github.com/thalesmachado "Thales' Github").
