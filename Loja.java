@@ -37,6 +37,11 @@ public class Loja{
 	listIngresso2.add(i4);
 	listIngresso2.add(i5);
 
+	List<Ingresso> listIngresso3 = new ArrayList<>();
+	listIngresso3.add(i1);
+	listIngresso3.add(i2);
+	listIngresso3.add(i4);
+
 
 	// Aqui estamos criando as instâncias (objetos) que vão ser apresentadas no terminal
 	Evento evento1 = new Evento("Letícia e Mari dos Teclados", "Born Again", listIngresso1);
@@ -56,10 +61,19 @@ public class Loja{
 	evento2.criaLocalData(2020, 9, 21, "Alexandria");
 	evento2.criaLocalData(2006, 6, 6, "Broadway");
 
-	// Criamos uma lista de eventos para conseguirmos iterar sobre eles e apresentar
+	Evento evento3 = new Evento("Jain", "Makeba", listIngresso3);
+	for(Ingresso i: listIngresso3){
+		i.setEvento(evento3);
+	}
+	evento3.criaLocalData(2017, 2, 4, "Paris");
+	evento3.criaLocalData(2018, 3, 8, "Toulouse");
+	evento3.criaLocalData(2018, 6, 9, "Toulouse");
+
+		// Criamos uma lista de eventos para conseguirmos iterar sobre eles e apresentar
 	List<Evento> eventos = new ArrayList<>();
 	eventos.add(evento1);
 	eventos.add(evento2);
+	eventos.add(evento3);
 
 	// Declaramos nossa variável scanner para receber dados de entrada do usuário
 	Scanner teclado = new Scanner(System.in);
