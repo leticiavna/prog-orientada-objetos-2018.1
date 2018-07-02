@@ -16,9 +16,6 @@ public class Carrinho {
 			 + item.getQuantidadeIngresso() +", R$: " + item.getIngresso().getValorIngressoNoBilhete());
 		}
 	}
-	public double getTotalIngressos() {
-		return calculaValorTotalIngressos();
-	}
 
 	// Essa função adiciona itens no carrinho.
 	public void adicionaNoCarrinho(QtdCarrinho Cart){
@@ -26,7 +23,8 @@ public class Carrinho {
 	}
 	
 	// Essa função pega todos os ingressos e seus valores (já com a quantidade multiplicada) e retorna o valor total.
-	private double calculaValorTotalIngressos(){
+	private double getValorTotalIngressos(){
+		totalIngressos = 0.0;
 		for(int i = 0; i < itensCarrinho.size(); i++){
 			totalIngressos += itensCarrinho.get(i).getValorDoTipo();
 		}
@@ -39,13 +37,13 @@ public class Carrinho {
 		System.out.println("NOME DO EVENTO, TIPO DE INGRESSO, QUANTIDADE, VALOR UNITÁRIO");
 		this.getItensCarrinho();
 
-		System.out.println("VALOR TOTAL: R$ " + this.getTotalIngressos());
+		System.out.println("VALOR TOTAL: R$ " + this.getValorTotalIngressos());
 		System.out.println("*************** SEU CARRINHO ***************");
 		System.out.println("\n");
 	}
 
-	public void limpaCarrinho(){
+	/*public void limpaCarrinho(){
 		itensCarrinho.clear();
 		totalIngressos = 0.0;
-	}
+	} */
 }

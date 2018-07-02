@@ -41,8 +41,7 @@ public class Loja{
 	listIngresso3.add(i1);
 	listIngresso3.add(i2);
 	listIngresso3.add(i4);
-
-
+	
 	// Aqui estamos criando as instâncias (objetos) que vão ser apresentadas no terminal
 	Evento evento1 = new Evento("Letícia e Mari dos Teclados", "Born Again", listIngresso1);
 	for(Ingresso i: listIngresso1){
@@ -68,8 +67,9 @@ public class Loja{
 	evento3.criaLocalData(2017, 2, 4, "Paris");
 	evento3.criaLocalData(2018, 3, 8, "Toulouse");
 	evento3.criaLocalData(2018, 6, 9, "Toulouse");
-
-		// Criamos uma lista de eventos para conseguirmos iterar sobre eles e apresentar
+	
+	
+	// Criamos uma lista de eventos para conseguirmos iterar sobre eles e apresentar
 	List<Evento> eventos = new ArrayList<>();
 	eventos.add(evento1);
 	eventos.add(evento2);
@@ -102,8 +102,8 @@ public class Loja{
 			}
 			else {
 				// aqui ele escolheu o show
-				String chosenEvento = eventos.get(opcao-1).getInformacoes();
 				int numEvento = opcao-1;
+				String chosenEvento = eventos.get(numEvento).getInformacoes();
 				E = eventos.get(numEvento);
 
 				// aqui escolhe local e data
@@ -118,6 +118,7 @@ public class Loja{
 				E.getIngressosAtuais();
 				opcao = teclado.nextInt();
 				int numIngresso = opcao-1;
+
 				// aqui vai escolher a quantidade
 				System.out.println("Você escolheu o ingresso: " + 
 				E.getIngressos().get(numIngresso).getTipoIngressonoBilhete() + 
@@ -179,7 +180,7 @@ public class Loja{
 				// leva para a funcção de validação da classe Cartao
 				if (card.cartaoValido()) {
 					System.out.println("\nSucesso! Compra realizada. Curta bastante bb :D\n");
-					Cart.limpaCarrinho();
+					//Cart.limpaCarrinho();
 				}
 				else {
 					System.out.println(("O-oh. Algo de errado não está certo. Tente novamente :("));
@@ -190,9 +191,9 @@ public class Loja{
 				}
 			}
 
-		if (opcao == 4) {
+		else if (opcao == 4) {
 				System.out.println("\nA mudança é o processo essencial de toda a existência. ;) \n");
 		}
-	 } while (opcao != 0); // enquanto a resposta não for 0 o sistema roda
+	 }  while (opcao != 0);// enquanto a resposta não for 0 o sistema roda
 	}
 }
