@@ -183,6 +183,7 @@ public class Loja{
 				dados = teclado.nextLine();
 				card.setCodSeguranca(dados);
 				System.out.print("\nValidando ");
+				// Isso aqui coloca um tempinho pra validacaoo, pra criar suspense 
 				for (int i = 0 ; i < 5; i++){
 					try{
 						Thread.sleep(500);
@@ -201,13 +202,14 @@ public class Loja{
 				}
 				System.out.println(" :|!");
 	
-				// leva para a funcção de validação da classe Cartao
+				
 				try{
 					Thread.sleep(1000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e.getMessage());
 				}
+				// leva para a funcção de validação da classe Cartao
 				if (card.cartaoValido()) {
 					System.out.println("\nSucesso! Compra realizada. Curta bastante bb :D\n");
 					Cart.limpaCarrinho();
