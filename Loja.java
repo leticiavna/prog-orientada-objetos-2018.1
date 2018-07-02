@@ -215,7 +215,7 @@ public class Loja{
 					Cart.limpaCarrinho();
 				}
 				else {
-					System.out.println(("O-oh. Algo de errado não está certo. Tente novamente :("));
+					System.out.println(("O-oh. Há algo errado. Tente novamente :("));
 				}
 	
 				System.out.println("*****************************************************");
