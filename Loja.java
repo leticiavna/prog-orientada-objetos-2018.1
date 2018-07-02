@@ -20,32 +20,34 @@ public class Loja{
 	TipoIngresso tipo5 = new TipoIngresso("Pista Galáctica", 400.00);
 
 	// aqui instanciamos ingressos 
-	Ingresso i1 = new Ingresso(tipo1);
-	Ingresso i2 = new Ingresso(tipo2);
-	Ingresso i3 = new Ingresso(tipo3);
-	Ingresso i4 = new Ingresso(tipo4);
-	Ingresso i5 = new Ingresso(tipo5);
-	Ingresso i6 = new Ingresso(tipo1);
-	Ingresso i7 = new Ingresso(tipo1);
+	Ingresso i1 = new Ingresso(tipo1); // P
+	Ingresso i2 = new Ingresso(tipo1); // P
+	Ingresso i3 = new Ingresso(tipo1); // P
+	Ingresso i4 = new Ingresso(tipo2); // CS
+	Ingresso i5 = new Ingresso(tipo2); // CS
+	Ingresso i6 = new Ingresso(tipo3); // CI
+	Ingresso i7 = new Ingresso(tipo4); // ARQ
+	Ingresso i8 = new Ingresso(tipo4); // ARQ
+	Ingresso i9 = new Ingresso(tipo5); // PA
 
 	// aqui cria-se listas de ingressos para incluir nas instancias de evento
 	List<Ingresso> listIngresso1 = new ArrayList<>();
 	listIngresso1.add(i1);
-	listIngresso1.add(i2);
-	listIngresso1.add(i3);
+	listIngresso1.add(i4);
+	listIngresso1.add(i6);
 
 	List<Ingresso> listIngresso2 = new ArrayList<>();
-	listIngresso2.add(i6);
-	listIngresso2.add(i4);
-	listIngresso2.add(i5);
+	listIngresso2.add(i2);
+	listIngresso2.add(i7);
+	listIngresso2.add(i9);
 
 	List<Ingresso> listIngresso3 = new ArrayList<>();
-	listIngresso3.add(i7);
-	listIngresso3.add(i2);
-	listIngresso3.add(i4);
+	listIngresso3.add(i3);
+	listIngresso3.add(i5);
+	listIngresso3.add(i8);
 	
 	// Aqui estamos criando as instâncias (objetos) que vão ser apresentadas no terminal
-	Evento evento1 = new Evento("Letícia e Mari dos Teclados", "Born Again", listIngresso1);
+	Evento evento1 = new Evento("LetMari dos Teclados", "Born Again", listIngresso1);
 	for(Ingresso i: listIngresso1){
 		i.setEvento(evento1);
 	}
@@ -58,8 +60,8 @@ public class Loja{
 	for(Ingresso i: listIngresso2){
 		i.setEvento(evento2);
 	}
-	evento2.criaLocalData(1995, 1, 1, "Arena Ceres");
-	evento2.criaLocalData(2020, 9, 21, "Alexandria");
+	evento2.criaLocalData(1995, 1, 1, "Arena Hera no Olimpo");
+	evento2.criaLocalData(2020, 9, 21, "Estádio em Marte");
 	evento2.criaLocalData(2006, 6, 6, "Broadway");
 
 	Evento evento3 = new Evento("Jain", "Makeba", listIngresso3);
@@ -146,11 +148,15 @@ public class Loja{
 		if (opcao == 3) {
 			Cart.mostraCarrinho();
 			
+			if (Cart.getSizeCarrinho() == 0) {
+				System.out.println("Você não tem itens no carrinho. Que tal comprar?");
+			}
+			else{
 			// próxima confirmação
-			System.out.println("E aí, vamos fechar? Digite '1' para continuar e comprar ou '0' para cancelar a compra.");
+			System.out.println("E aí, vamos fechar? Digite '1' para continuar e comprar ou '0' para voltar.");
 			int confirma = teclado.nextInt();
 			if (confirma == 0){
-				System.out.println("\nVejo você na próxima!\n");
+				System.out.println("\nAté mais!\n");
 			}
 			else {
 				System.out.println("\nOba! Vamos continuar.");
@@ -211,7 +217,7 @@ public class Loja{
 				}
 	
 				System.out.println("*****************************************************");
-				System.out.println("\n");
+				System.out.println("\n");}
 				}
 			}
 
