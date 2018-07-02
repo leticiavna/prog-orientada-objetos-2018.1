@@ -25,6 +25,8 @@ public class Loja{
 	Ingresso i3 = new Ingresso(tipo3);
 	Ingresso i4 = new Ingresso(tipo4);
 	Ingresso i5 = new Ingresso(tipo5);
+	Ingresso i6 = new Ingresso(tipo1);
+	Ingresso i7 = new Ingresso(tipo1);
 
 	// aqui cria-se listas de ingressos para incluir nas instancias de evento
 	List<Ingresso> listIngresso1 = new ArrayList<>();
@@ -33,12 +35,12 @@ public class Loja{
 	listIngresso1.add(i3);
 
 	List<Ingresso> listIngresso2 = new ArrayList<>();
-	listIngresso2.add(i1);
+	listIngresso2.add(i6);
 	listIngresso2.add(i4);
 	listIngresso2.add(i5);
 
 	List<Ingresso> listIngresso3 = new ArrayList<>();
-	listIngresso3.add(i1);
+	listIngresso3.add(i7);
 	listIngresso3.add(i2);
 	listIngresso3.add(i4);
 	
@@ -180,7 +182,7 @@ public class Loja{
 				// leva para a funcção de validação da classe Cartao
 				if (card.cartaoValido()) {
 					System.out.println("\nSucesso! Compra realizada. Curta bastante bb :D\n");
-					//Cart.limpaCarrinho();
+					Cart.limpaCarrinho();
 				}
 				else {
 					System.out.println(("O-oh. Algo de errado não está certo. Tente novamente :("));
