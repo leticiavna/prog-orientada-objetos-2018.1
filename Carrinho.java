@@ -9,6 +9,10 @@ public class Carrinho {
 		itensCarrinho = new ArrayList<>();
 	}
 
+	public int getSizeCarrinho(){
+		return this.itensCarrinho.size();
+	}
+
 	// GETS para o carrinho, retorna quantidade total, quantidade de itens
 	public void getItensCarrinho(){
 		for(QtdCarrinho item: itensCarrinho){
