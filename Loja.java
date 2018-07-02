@@ -176,10 +176,32 @@ public class Loja{
 				System.out.println("Finalmente..... coloque o número de segurança, com 3 dígitos:");
 				dados = teclado.nextLine();
 				card.setCodSeguranca(dados);
-	
-				System.out.println("\nValidando.... :| ");
+				System.out.print("\nValidando ");
+				for (int i = 0 ; i < 5; i++){
+					try{
+						Thread.sleep(500);
+						System.out.print(".");
+					}
+					catch(InterruptedException e){
+						System.out.println(e.getMessage());
+					}
+					
+				}
+				try{
+					Thread.sleep(500);
+				}
+				catch(InterruptedException e){
+					System.out.println(e.getMessage());
+				}
+				System.out.println(" :|!");
 	
 				// leva para a funcção de validação da classe Cartao
+				try{
+					Thread.sleep(1000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e.getMessage());
+				}
 				if (card.cartaoValido()) {
 					System.out.println("\nSucesso! Compra realizada. Curta bastante bb :D\n");
 					Cart.limpaCarrinho();
